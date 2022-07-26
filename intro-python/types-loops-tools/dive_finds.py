@@ -57,8 +57,15 @@ def create_dive_finds(number_dives):
     # then composing and returning the message and numbers.
 	
     number_items = calculate_number_items(number_dives)
-    print(f'You found {number_items} items')
+    #dive_finds_message = f'You found {number_items} items'
+    #print(dive_finds_message)
     #raise NotImplementedError()
+    dive_finds_message = dict.fromkeys(DIVEFINDS, 0)
+    for i in range(number_items):
+      dive_find = generate_find()
+      dive_finds_message[dive_find] += 1
+        
+    return dive_finds_message
 
 
 def main():
